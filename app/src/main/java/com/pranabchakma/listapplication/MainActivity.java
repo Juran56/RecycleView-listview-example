@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     public List<Item> getItems() {
         List<Item> itemslist= new ArrayList<>();
-        itemslist.add(new Item("hello","details"));
-        itemslist.add(new Item("hello","details"));
-        itemslist.add(new Item("hello","details"));
+        itemslist.add(new Item("book One ","Book one details"));
+        itemslist.add(new Item("book two"," Book two details"));
+        itemslist.add(new Item("book three"," Book three details"));
         return itemslist;
     }
 }

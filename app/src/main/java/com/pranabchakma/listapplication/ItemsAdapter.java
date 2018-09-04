@@ -1,6 +1,8 @@
 package com.pranabchakma.listapplication;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,6 +33,17 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         final Item item = itemList.get(position);
         holder.title.setText(item.getTitle());
         holder.details.setText(item.getDetails());
+        holder.check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,DetailsActivity.class);
+                Bundle data = new Bundle();
+                data.putString("title",item.getTitle());
+                data.putString("Details",item.getDetails());
+                intent.putExtras(data);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
